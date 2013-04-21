@@ -23,9 +23,6 @@ Template.content.helpers({
             }
         } else {
             var guest = Guests.findOne($.cookie('guest_id'));
-            if (!guest) {
-                $.cookie('guest_id', '');
-            }
             Session.set('guest', guest);
         }
 
@@ -95,33 +92,4 @@ $(document).ready(function() {
             $(this).videobackground('mute');
         }
     });
-
-    
-    /*$('.option').click(function () {
-        if (!$(this).hasClass('selected')) {
-            $('.option').removeClass('selected');
-            $(this).addClass('selected');
-
-            $.ajax('/ajax/updateUser', {
-                data: {
-                    dietary: $(this).data('type')
-                }
-            });
-        }
-    });
-    $('#dietary_other').on('blur', function () {
-        if (!$(this).val()) {
-            $.ajax('/ajax/updateUser', {
-                data: {
-                    dietary: $('.option.selected').data('type')
-                }
-            });
-        } else {
-            $.ajax('/ajax/updateUser', {
-                data: {
-                    dietary: $(this).val()
-                }
-            });
-        }
-    })*/
 });

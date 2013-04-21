@@ -140,8 +140,11 @@
         </div>
     </div>
 
-
+    {{#if guest}}
     <div class="opaque">
+    {{else}}
+    <div class="opaque last">
+    {{/if}}
         <div class="container">
 
             <h2 class="ribbon">
@@ -232,13 +235,20 @@
 
     {{#with guest}}
     {{#constant}}
-    <div class="opaque">
+    <div class="opaque last">
         <div class="container">
             <h2 class="ribbon">
                <strong class="ribbon-content">Directions</strong>
             </h2>
         </div>
         <div id="map-canvas"></div>
+        <div class="container">
+            <div class="row">
+                <div class="span8 offset2">
+                    <div id="directionsPanel" ></div>
+                </div>
+            </div>
+        </div>
     </div>
     {{/constant}}
     {{/with}}
