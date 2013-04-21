@@ -1,0 +1,155 @@
+<head>
+    <title>hitched</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/client/css/style.css" rel="stylesheet" media="screen" />
+    <script type="text/javascript" src="http://fast.fonts.com/jsapi/77204264-423c-4f2a-9503-62549b994f99.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwaeoO0Dj2WBI1RX7J2sLE4d9r_xj0kSg&sensor=true"></script>
+</head>
+
+<body>
+    {{> head}}
+    {{> content}}
+</body>
+
+<template name="head">
+    <header class="jumbotron subhead" id="overview">
+        <div class="container">
+            <h1>Philippa &amp; Rich</h1>
+            <h2>are getting married</h2>
+        </div>
+    </header>
+</template>
+
+<template name="content">
+    <div class="opaque">
+        <div class="container">
+            <h2 class="ribbon">
+               <strong class="ribbon-content">Hello{{#with guest}} {{name}}{{/with}},</strong>
+            </h2>
+            <div class="row">
+                <div class="span8 offset2">
+                    <p class="center">We would like to invite you to join us in celebration of our marriage at</p>
+                </div>
+            </div>
+            <div class="row border">
+                <div class="span4 offset1">
+                    <div class="where component">
+                        <address>
+                            <strong>Caswell House</strong><br />
+                            Brize Norton,<br />
+                            Oxfordshire,<br />
+                            OX18 3NJ
+                        </address>
+                    </div>
+                </div>
+                <div class="span2">
+                    <p class="at center">
+                        on
+                    </p>
+                </div>
+                <div class="span4">
+                    <div class="when component">
+                        <p><strong>11th October 2013</strong></p>
+                        <p>Ceremony at 2:00 <small>pm</small></p>
+                        <p><strong>Arriving for 1:30 <small>pm</small></strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#with guest}}
+    <div class="opaque">
+        <div class="container">
+
+            <h2 class="ribbon">
+               <strong class="ribbon-content">Food</strong>
+            </h2>
+            <div class="row">
+                <div class="span8 offset2">
+                    <h3>Main</h3>
+                    <p>Gressingham duck breast with blackberry jus, dauphinoise potatoes and green beans</p>
+                    <h4>Vegetarian option</h4>
+                    <p>Oven baked squash filled with Moroccan spiced cous cous, chick peas and coriander</p>
+                    <hr />
+                    <h3>Dessert</h3>
+                    <p>Lemon and passion fruit tart with raspberry coulis / Creme Brulee with raspberries and tuille biscuits</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4 offset1 option{{#if meat dietary}} selected{{/if}}" data-type="meat eater">
+                    <div class="inner">
+                        <p>I'm a meat eater</p>
+                        <div class="roundel">
+                            <div class="icon tick"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="span2 at center">or</div>
+                <div class="span4 option last{{#if vegetarian dietary}} selected{{/if}}" data-type="vegetarian">
+                    <div class="inner">
+                        <p>I'm a vegetarian</p>
+                        <div class="roundel">
+                            <div class="icon tick"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="additional">
+                    <input id="dietary_other" value="{{other dietary}}" placeholder="Other dietary requirements" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#if plusone}}
+    <div class="opaque">
+        <div class="container">
+
+            <h2 class="ribbon">
+               <strong class="ribbon-content">Plus guest</strong>
+            </h2>
+            <div class="row">
+                <div class="span8 offset2">
+                    <p>Please feel free to bring along an additional guest</p>
+                    <label>Guest name<input id="plusone_name" value="{{plusone.name}}" /></label>
+                    <label>Dietary requirements<input id="plusone_diet" value="{{plusone.dietary}}" /></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{/with}}
+
+    <div class="opaque">
+        <div class="container">
+
+            <h2 class="ribbon">
+               <strong class="ribbon-content">Info</strong>
+            </h2>
+            <div class="row">
+                <div class="span4 offset2">
+                    <p>Come prepared with some comfortable dancing shoes - evening entertainment will consist of plenty of drinks, a hog roast, and a <a href="http://en.wikipedia.org/wiki/C%C3%A9ilidh">C&#233;ilidh</a>.</p>
+                </div>
+                <div class="span4">
+                    <p>If you'd like to get us a wedding gift we would be grateful for donations to our honeymoon fund. Otherwise, rather than a gift, please make a donation to x.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#with guest}}
+    {{#constant}}
+    <div class="opaque">
+        <div class="container">
+            <h2 class="ribbon">
+               <strong class="ribbon-content">Directions</strong>
+            </h2>
+        </div>
+        <div id="map-canvas"></div>
+    </div>
+    {{/constant}}
+    {{/with}}
+</template>
