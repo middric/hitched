@@ -1,7 +1,10 @@
+$ribbon-colour1: #333
+$ribbon-colour2: #444
+$ribbon-colour3: #fff
+
 body
     background: #fefefe
-    font-family: "Century Gothic W01"
-    min-width: 320px
+    font-family: "Muli"
 .video-background
     position: fixed
     top: 0
@@ -25,7 +28,6 @@ body
     h1, h2
         color: white
         font-size: 60px
-        font-family: "Century Gothic W01 Bold"
         font-weight: 400
         text-transform: uppercase
         letter-spacing: 7px
@@ -36,7 +38,6 @@ body
         line-height: 1
     h2
         font-size: 30px
-        font-family: "Century Gothic W01 Bold"
         border: 0
         margin: 0 auto
 
@@ -73,8 +74,6 @@ h4
         @media (max-width: 767px)
             text-align: center
         strong
-            font-weight: normal
-            font-family: "Century Gothic W01 Bold"
             text-transform: uppercase
             letter-spacing: 2px
 .when
@@ -89,13 +88,11 @@ h4
             text-align: center
         margin-bottom: 0
         strong 
-            font-weight: normal
-            font-family: "Century Gothic W01 Bold"
             text-transform: uppercase
             letter-spacing: 2px
 .at
     font-size: 16px
-    font-family: "CenturyGothicW01-BoldIt"
+    font-style: italic
     margin-top: 45px
     text-align: center
     @media (max-width: 767px)
@@ -116,15 +113,41 @@ h4
     border-top: 1px solid #ccc
 .opaque
     background: #fff
-    margin-bottom: 60px
+    margin-bottom: 120px
+
+#dietary_other
+    border: 1px solid #ccc
+    border-radius: 2px
+    padding: 5px
+    min-height: 45px
+    width: 100%
+    box-sizing: border-box
+#plusone_name, #plusone_diet
+    border: 1px solid #ccc
+    border-radius: 2px
+    padding: 5px
+    min-height: 45px
+    width: 100%
+    margin-bottom: 10px
+    box-sizing: border-box
+#plusone_diet
+    margin-bottom: 0
+label
+    text-transform: uppercase
+    letter-spacing: 3px
+    font-weight: 700
+    margin-bottom: 5px
 
 .option
     background: #ccc
     padding: 3px
     border-radius: 2px
     text-align: center
+    color: #666
+    margin-top: 20px
+    margin-bottom: 20px
     .inner
-        border: 1px solid #000
+        border: 1px solid #aaa
         padding: 10px
         height: 50px
         line-height: 50px
@@ -144,14 +167,24 @@ h4
     background-position: -406px -38px
 
 .selected
-    background: green
+    background: #333
+    color: #fff
+    .inner
+        border-color: $ribbon-colour2
 
 .selected .tick 
     background-position: -444px -35px
 
-$ribbon-colour1: #333
-$ribbon-colour2: #444
-$ribbon-colour3: #fff
+.accommodation
+    &, li
+        list-style: none
+        margin: 0
+        padding: 0
+    li
+        margin-bottom: 15px
+    h4
+        margin-bottom: 0
+
 .ribbon
     font-size: 16px !important
     width: 50%
@@ -166,9 +199,7 @@ $ribbon-colour3: #fff
     letter-spacing: 6px
     text-shadow: 1px 1px 1px $ribbon-colour1, 2px 2px 1px $ribbon-colour2
     @media (max-width: 480px)
-        width: 100%
-        padding: 2px 1em
-        margin-left: -1em
+        width: 95%
     @media (min-width: 481px) and (max-width: 767px)
         margin-top: -50px
         width: 75%

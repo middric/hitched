@@ -23,6 +23,9 @@ Template.content.helpers({
             }
         } else {
             var guest = Guests.findOne($.cookie('guest_id'));
+            if (!guest) {
+                $.cookie('guest_id', '');
+            }
             Session.set('guest', guest);
         }
 
@@ -87,6 +90,7 @@ $(document).ready(function() {
         videoSource: [['/video/encoded.mp4', 'video/mp4'],
             ['/video/encoded.webm', 'video/webm']],
         loop: true,
+        //poster: '/',
         loadedCallback: function() {
             $(this).videobackground('mute');
         }

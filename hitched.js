@@ -10,7 +10,8 @@ Guests = new Meteor.Collection('guests');
     plusone: {
         name: "",
         dietary: meat|vegetarian|""
-    }
+    },
+    accommodation: true|false
 }
 
 */

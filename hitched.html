@@ -1,9 +1,9 @@
 <head>
     <title>hitched</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/client/css/style.css" rel="stylesheet" media="screen" />
-    <script type="text/javascript" src="http://fast.fonts.com/jsapi/77204264-423c-4f2a-9503-62549b994f99.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic|Muli:400,400italic|Raleway:400,500,600,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwaeoO0Dj2WBI1RX7J2sLE4d9r_xj0kSg&sensor=true"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
     <div class="opaque">
         <div class="container">
             <h2 class="ribbon">
-               <strong class="ribbon-content">Hello{{#with guest}} {{name}}{{/with}},</strong>
+               <strong class="ribbon-content">Hello{{#with guest}} {{name}}{{/with}}</strong>
             </h2>
             <div class="row">
                 <div class="span8 offset2">
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="additional">
+                <div class="additional span10 offset1">
                     <input id="dietary_other" value="{{other dietary}}" placeholder="Other dietary requirements" />
                 </div>
             </div>
@@ -135,6 +135,96 @@
                 </div>
                 <div class="span4">
                     <p>If you'd like to get us a wedding gift we would be grateful for donations to our honeymoon fund. Otherwise, rather than a gift, please make a donation to x.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="opaque">
+        <div class="container">
+
+            <h2 class="ribbon">
+               <strong class="ribbon-content">Accommodation</strong>
+            </h2>
+            {{#if guest.accommodation}}
+            <div class="row">
+                <div class="span8 offset2">
+                    <h3>At the venue</h3>
+                    <p>Good news! There is accommodation available for you on site. If you would like to use it please contact us for more details</p>
+                </div>
+            </div>
+            {{/if}}
+            <div class="row">
+                <div class="span4 offset2">
+                    <h3>Hotels</h3>
+                    <ul class="accommodation">
+                        <li>
+                            <h4>Witney Four Pillars Hotel - 3.2 miles</h4>
+                            <p>Ducklington Lane, Witney, OX28 4EX</p>
+                        </li>
+                        <li>
+                            <h4>The Fleece - 3.3 miles</h4>
+                            <p>11 Church Green, Witney, OX28 4AZ</p>
+                        </li>
+                        <li>
+                            <h4>The Bird in Hand Inn - 4.9 miles</h4>
+                            <p>Whiteoak Green, near Hailey, Witney, OX29 9XP</p>
+                        </li>
+                        <li>
+                            <h4>The Old Court Hotel - 3.5 miles</h4>
+                            <p>39-42 Bridge Street, Witney, OX28 1DA</p>
+                        </li>
+                        <li>
+                            <h4>The Bay Tree Hotel - 6.1 miles</h4>
+                            <p>Sheep Stree, Burford, OX18 4LW</p>
+                        </li>
+                        <li>
+                            <h4>Burford House - 6.1 miles</h4>
+                            <p>99 High Street, Burford, OX18 4QA</p>
+                        </li>
+                        <li>
+                            <h4>The Lamb Inn - 6.1 miles</h4>
+                            <p>Sheep Street, Burford, OX18 4LR</p>
+                        </li>
+                        <li>
+                            <h4>The Swan Inn - 5.1 miles</h4>
+                            <p>Swinbrrok, Burford, OX18 4DY</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="span4 offset1">
+                    <h3>Bed &amp; Breakfast</h3>
+                    <ul class="accommodation">
+                        <li>
+                            <h4>Corncroft Guest House - 2.9 miles</h4>
+                            <p>69-71 Corn Street, Witney, OX28 6AS</p>
+                        </li>
+                        <li>
+                            <h4>The Cottage - 6.3 miles</h4>
+                            <p>Witney Road, Brighthampton, Standlake, OX29 7QQ</p>
+                        </li>
+                        <li>
+                            <h4>The Carpenters - 2.2 miles</h4>
+                            <p>96 Station Road, Brize Norton, OX18 3NA</p>
+                        </li>
+                        <li>
+                            <h4>The Priory - 1.8 miles</h4>
+                            <p>Manor Farm, Manor Road, Brize Norton, OX18 3NA</p>
+                        </li>
+                        <li>
+                            <h4>Hill Grove Farm - 2.8 miles</h4>
+                            <p>Crawley Dry Lane, Minster Lovell, Witney, OX29 0NA</p>
+                        </li>
+                        <li>
+                            <h4>The Laurels - 3.1 miles</h4>
+                            <p>53 Burford Roa, Witney, OX28 6DR</p>
+                        </li>
+                        <li>
+                            <h4>Wheelgate House - 4.8 miles</h4>
+                            <p>Market Square, Bampton, OX18 2JH</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
