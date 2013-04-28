@@ -1,5 +1,9 @@
 Guests = new Meteor.Collection('guests');
-
+Guests.allow({
+	update: function () {
+		return true;
+	}
+})
 /* Guest object
 
 { 
