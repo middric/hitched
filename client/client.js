@@ -38,46 +38,53 @@ Template.content.helpers({
 
 Template.content.events({
     'click .option[data-type="attending"]': function () {
-        Meteor.call('updateRSVP', Session.get('guest'), true);
-        $('.thankyou').clearQueue().fadeIn('slow', function () {
-            $(this).delay(3000).fadeOut('slow');
+        Meteor.call('updateRSVP', Session.get('guest'), true, function () {
+            $('.thankyou').clearQueue().fadeIn('slow', function () {
+                $(this).delay(3000).fadeOut('slow');
+            });
         });
     },
     'click .option[data-type="not attending"]': function () {
-        Meteor.call('updateRSVP', Session.get('guest'), false);
-        $('.thankyou').clearQueue().fadeIn('slow', function () {
-            $(this).delay(3000).fadeOut('slow');
+        Meteor.call('updateRSVP', Session.get('guest'), false, function () {
+            $('.thankyou').clearQueue().fadeIn('slow', function () {
+                $(this).delay(3000).fadeOut('slow');
+            });
         });
     },
     'click .option[data-type="meat eater"]': function () {
-        Meteor.call('updateDiet', Session.get('guest'), 'meat');
-        $('.thankyou').clearQueue().fadeIn('slow', function () {
-            $(this).delay(3000).fadeOut('slow');
+        Meteor.call('updateDiet', Session.get('guest'), 'meat', function () {
+            $('.thankyou').clearQueue().fadeIn('slow', function () {
+                $(this).delay(3000).fadeOut('slow');
+            });
         });
     },
     'click .option[data-type="vegetarian"]': function () {
-        Meteor.call('updateDiet', Session.get('guest'), 'vegetarian');
-        $('.thankyou').clearQueue().fadeIn('slow', function () {
-            $(this).delay(3000).fadeOut('slow');
+        Meteor.call('updateDiet', Session.get('guest'), 'vegetarian', function () {
+            $('.thankyou').clearQueue().fadeIn('slow', function () {
+                $(this).delay(3000).fadeOut('slow');
+            });
         });
     },
     'blur #dietary_other': function (e) {
-        Meteor.call('updateDiet', Session.get('guest'), e.target.value);
-        $('.thankyou').clearQueue().fadeIn('slow', function () {
-            $(this).delay(3000).fadeOut('slow');
+        Meteor.call('updateDiet', Session.get('guest'), e.target.value, function () {
+            $('.thankyou').clearQueue().fadeIn('slow', function () {
+                $(this).delay(3000).fadeOut('slow');
+            });
         });
     },
 
     'blur #plusone_name': function (e) {
-        Meteor.call('updatePlusOneName', Session.get('guest'), e.target.value);
-        $('.thankyou').clearQueue().fadeIn('slow', function () {
-            $(this).delay(3000).fadeOut('slow');
+        Meteor.call('updatePlusOneName', Session.get('guest'), e.target.value, function () {
+            $('.thankyou').clearQueue().fadeIn('slow', function () {
+                $(this).delay(3000).fadeOut('slow');
+            });
         });
     },
     'blur #plusone_diet': function (e) {
-        Meteor.call('updatePlusOneDiet', Session.get('guest'), e.target.value);
-        $('.thankyou').clearQueue().fadeIn('slow', function () {
-            $(this).delay(3000).fadeOut('slow');
+        Meteor.call('updatePlusOneDiet', Session.get('guest'), e.target.value, function () {
+            $('.thankyou').clearQueue().fadeIn('slow', function () {
+                $(this).delay(3000).fadeOut('slow');
+            });
         });
     }
 })
